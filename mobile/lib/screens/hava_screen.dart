@@ -78,6 +78,15 @@ class _HavaScreenState extends State<HavaScreen> {
 
   Widget _buildMainWeather(hava) {
     return Column(
+      children: [
+        Hero(
+          tag: 'hava_icon',
+          child: Container(
+            padding: const EdgeInsets.all(20.0),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white.withOpacity(0.1),
+            ),
             child: Icon(_getWeatherIcon(hava.condition), size: 100.0, color: Colors.white),
           ),
         ),
