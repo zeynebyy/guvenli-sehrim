@@ -12,7 +12,7 @@ class AqiDto {
   }
 
   AqiModel toDomain() {
-    final aqi = current['european_aqi'] as int? ?? 0;
+    final aqi = (current['european_aqi'] as num?)?.toInt() ?? 0;
     String status = 'İyi';
     String advice = 'Hava kalitesi tatmin edici ve hava kirliliği çok az risk teşkil ediyor.';
 

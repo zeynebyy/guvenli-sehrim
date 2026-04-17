@@ -78,24 +78,15 @@ class _HavaScreenState extends State<HavaScreen> {
 
   Widget _buildMainWeather(hava) {
     return Column(
-      children: [
-        Hero(
-          tag: 'hava_icon',
-          child: Container(
-            padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white.withOpacity(0.1),
-            ),
-            child: Icon(_getWeatherIcon(hava.condition), size: 100, color: Colors.white),
+            child: Icon(_getWeatherIcon(hava.condition), size: 100.0, color: Colors.white),
           ),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 16.0),
         Text(
           '${hava.temp.toInt()}°',
           key: const Key(AppKeys.havaTempText),
           style: GoogleFonts.outfit(
-            fontSize: 100, 
+            fontSize: 100.0, 
             fontWeight: FontWeight.w200, 
             color: Colors.white,
             height: 1.0,
@@ -105,10 +96,10 @@ class _HavaScreenState extends State<HavaScreen> {
           hava.condition.toUpperCase(),
           key: const Key(AppKeys.havaDurumText),
           style: GoogleFonts.outfit(
-            fontSize: 22, 
+            fontSize: 22.0, 
             fontWeight: FontWeight.w600, 
             color: Colors.white70, 
-            letterSpacing: 4
+            letterSpacing: 4.0
           ),
         ),
       ],
@@ -119,19 +110,19 @@ class _HavaScreenState extends State<HavaScreen> {
     return ClipRRect(
       borderRadius: BorderRadius.circular(32),
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+        filter: ImageFilter.blur(sigmaX: 20.0, sigmaY: 20.0),
         child: Container(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24.0),
           decoration: BoxDecoration(
             color: Colors.white.withOpacity(0.1),
-            borderRadius: BorderRadius.circular(32),
+            borderRadius: BorderRadius.circular(32.0),
             border: Border.all(color: Colors.white.withOpacity(0.1)),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _buildInfoItem(Icons.water_drop_outlined, 'Nem', '${hava.humidity}%'),
-              Container(width: 1, height: 40, color: Colors.white24),
+              Container(width: 1.0, height: 40.0, color: Colors.white24),
               _buildInfoItem(Icons.air_outlined, 'Rüzgar', '${hava.windSpeed} km/s'),
             ],
           ),
@@ -180,9 +171,9 @@ class _HavaScreenState extends State<HavaScreen> {
                 width: 100,
                 margin: const EdgeInsets.only(right: 16),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(24),
+                  borderRadius: BorderRadius.circular(24.0),
                   child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                    filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                     child: Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(

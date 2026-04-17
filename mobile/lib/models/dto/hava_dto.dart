@@ -41,7 +41,7 @@ class HavaDto {
     return HavaModel(
       city: city,
       temp: (current['temperature'] as num?)?.toDouble() ?? 0.0,
-      condition: _mapWeatherCode(current['weathercode'] as int? ?? 0),
+      condition: _mapWeatherCode((current['weathercode'] as num?)?.toInt() ?? 0),
       humidity: 0, // Open-Meteo current endpoint doesn't include humidity without extra params
       windSpeed: (current['windspeed'] as num?)?.toDouble() ?? 0.0,
       forecast: forecast,

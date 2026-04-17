@@ -26,8 +26,8 @@ class DepremDto {
       depth: (json['depth'] as num?)?.toDouble() ?? 0.0,
       magnitude: (json['mag'] as num?)?.toDouble() ?? 0.0,
       location: json['title'] ?? '',
-      latitude: (coordinates.length > 1 ? coordinates[1] : 0.0).toDouble(),
-      longitude: (coordinates.isNotEmpty ? coordinates[0] : 0.0).toDouble(),
+      latitude: (coordinates.length > 1 ? (coordinates[1] as num).toDouble() : 0.0),
+      longitude: (coordinates.isNotEmpty ? (coordinates[0] as num).toDouble() : 0.0),
     );
   }
 

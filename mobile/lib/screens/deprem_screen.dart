@@ -88,16 +88,16 @@ class _DepremScreenState extends State<DepremScreen> {
                 : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
               userAgentPackageName: 'com.guvenlisehrim.app',
             ),
-            MarkerLayer(
-              markers: provider.depremler
-                  .map((d) => Marker(
-                        point: LatLng(d.lat, d.lng),
-                        width: 60,
-                        height: 60,
-                        child: _buildMarker(d),
-                      ))
-                  .toList(),
-            ),
+          MarkerLayer(
+            markers: provider.depremler
+                .map((d) => Marker(
+                      point: LatLng(d.lat, d.lng),
+                      width: 60.0,
+                      height: 60.0,
+                      child: _buildMarker(d),
+                    ))
+                .toList(),
+          ),
           ],
         ),
         // Gradient overlay for better transition
@@ -150,11 +150,11 @@ class _DepremScreenState extends State<DepremScreen> {
               },
               onEnd: () {}, // Restart if needed via explicit logic
             ),
-          Icon(
-            Icons.location_on,
-            color: d.magnitude >= 5.0 ? Colors.red : (d.magnitude >= 4.0 ? Colors.orange : Colors.blue),
-            size: (d.magnitude * 10).clamp(24, 60),
-          ),
+            Icon(
+              Icons.location_on,
+              color: d.magnitude >= 5.0 ? Colors.red : (d.magnitude >= 4.0 ? Colors.orange : Colors.blue),
+              size: (d.magnitude * 10.0).clamp(24.0, 60.0),
+            ),
         ],
       ),
     );
