@@ -20,6 +20,12 @@ class ForecastModel {
   final String date;
   final double high;
   final double low;
+  final String condition;
 
-  ForecastModel({required this.date, required this.high, required this.low});
+  ForecastModel({
+    required this.date, 
+    required this.high, 
+    required this.low, 
+    required this.condition
+  });
 }

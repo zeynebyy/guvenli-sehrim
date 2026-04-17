@@ -24,6 +24,7 @@ class HavaDto {
     final times = daily['time'] as List? ?? [];
     final maxTemps = daily['temperature_2m_max'] as List? ?? [];
     final minTemps = daily['temperature_2m_min'] as List? ?? [];
+    final weatherCodes = daily['weathercode'] as List? ?? [];
 
     List<ForecastModel> forecast = [];
     for (int i = 0; i < times.length; i++) {
@@ -31,6 +32,9 @@ class HavaDto {
         date: times[i].toString(),
         high: (maxTemps[i] as num).toDouble(),
         low: (minTemps[i] as num).toDouble(),
+        condition: i < weatherCodes.length 
+            ? _mapWeatherCode(weatherCodes[i] as int? ?? 0) 
+            : 'Belirsiz',
       ));
     }
 
